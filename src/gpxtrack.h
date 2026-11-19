@@ -36,7 +36,7 @@ Track smoothTrack(const Track &src, double cutoffPeriodM,
 // cumulative distance, linearly interpolating lat/lon/ele. Produces one
 // point every `stepMeters` metres, useful for exporting a densified GPX
 // file. dist and grad are recomputed on the new samples.
-Track resampleTrackUniform(const Track &src, double stepMeters = 1.0);
+Track resampleTrackUniform(const Track &src, double stepMeters = 2.0);
 
 // Like smoothTrack but, instead of mapping the cleaned profile back onto the
 // original sample positions, returns the track directly on the uniform
@@ -44,4 +44,4 @@ Track resampleTrackUniform(const Track &src, double stepMeters = 1.0);
 // and realistic densified GPX (one point every metre) derived from the FFT
 // pipeline rather than re-interpolating the original samples.
 Track smoothTrackDensified(const Track &src, double cutoffPeriodM,
-                           int passes = 3, double stepMeters = 1.0);
+                           int passes = 3, double stepMeters = 2.0);
